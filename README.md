@@ -1,1 +1,2 @@
-# FRC-Robot-Manager-IOS
+# Robot Manager for IOS
+I really have no Idea what I'm doing...
