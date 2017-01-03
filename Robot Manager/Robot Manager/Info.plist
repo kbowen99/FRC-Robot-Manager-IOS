@@ -44,5 +44,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Visual Tagging of Robots</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Quick Tagging of Robots</string>
 </dict>
 </plist>

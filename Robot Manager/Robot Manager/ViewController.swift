@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Hide the keyboard. - did not know this was needed...
         teamNameField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.sourceType = .camera
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
