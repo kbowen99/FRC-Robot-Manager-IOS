@@ -13,6 +13,7 @@
 		A5B3D7331E1B1D37003E3721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D7321E1B1D37003E3721 /* Assets.xcassets */; };
 		A5B3D7361E1B1D37003E3721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D7341E1B1D37003E3721 /* LaunchScreen.storyboard */; };
 		A5B3D7411E1B1D37003E3721 /* Robot_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D7401E1B1D37003E3721 /* Robot_ManagerTests.swift */; };
+		A5B3D74C1E1B2E05003E3721 /* media in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D74B1E1B2E05003E3721 /* media */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		A5B3D73C1E1B1D37003E3721 /* Robot ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Robot ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B3D7401E1B1D37003E3721 /* Robot_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot_ManagerTests.swift; sourceTree = "<group>"; };
 		A5B3D7421E1B1D37003E3721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B3D74B1E1B2E05003E3721 /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; name = media; path = ../media; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A5B3D72A1E1B1D37003E3721 /* Robot Manager */,
 				A5B3D73F1E1B1D37003E3721 /* Robot ManagerTests */,
 				A5B3D7291E1B1D37003E3721 /* Products */,
+				A5B3D74B1E1B2E05003E3721 /* media */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B3D7361E1B1D37003E3721 /* LaunchScreen.storyboard in Resources */,
+				A5B3D74C1E1B2E05003E3721 /* media in Resources */,
 				A5B3D7331E1B1D37003E3721 /* Assets.xcassets in Resources */,
 				A5B3D7311E1B1D37003E3721 /* Main.storyboard in Resources */,
 			);
@@ -340,7 +344,7 @@
 		A5B3D7461E1B1D37003E3721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -354,7 +358,7 @@
 		A5B3D7471E1B1D37003E3721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
