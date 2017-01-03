@@ -418,6 +418,7 @@
 				A5B3D7471E1B1D37003E3721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5B3D7481E1B1D37003E3721 /* Build configuration list for PBXNativeTarget "Robot ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				A5B3D74A1E1B1D37003E3721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
