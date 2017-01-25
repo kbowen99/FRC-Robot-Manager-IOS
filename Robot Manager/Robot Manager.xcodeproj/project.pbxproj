@@ -344,7 +344,7 @@
 		A5B3D7461E1B1D37003E3721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -358,7 +358,7 @@
 		A5B3D7471E1B1D37003E3721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
