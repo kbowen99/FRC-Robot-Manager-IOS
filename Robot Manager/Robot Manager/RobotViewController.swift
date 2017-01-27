@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RobotViewController.swift
 //  Robot Manager
 //
 //  Created by Kurt Bowen on 1/2/17.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import os.log
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: properties
     @IBOutlet weak var teamNameField: UITextField!
@@ -16,6 +17,28 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var teamStrength: UISlider!
     @IBOutlet weak var teamGameMode: UISegmentedControl!
     @IBOutlet weak var teamPhoto: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    //Current Robot
+    var robo:Robot?
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = teamNameField.text ?? ""
+        let photo = teamPhoto.image
+        let rating = (teamStrength.value * 100)
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        robo = Robot(name: name, photo: photo, rating: Int(rating))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

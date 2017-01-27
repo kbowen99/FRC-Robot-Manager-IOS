@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ui-Ny-jrA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ajL-nT-Lkt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Robot-->
         <scene sceneID="12K-SS-shP">
             <objects>
-                <viewController id="5ui-Ny-jrA" customClass="ViewController" customModule="Robot_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5ui-Ny-jrA" customClass="RobotViewController" customModule="Robot_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NEX-oi-7y8"/>
                         <viewControllerLayoutGuide type="bottom" id="DQ1-c1-g5r"/>
@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-kP-huU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-Nc-YhY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-Nc-YhY">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="1064"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-jG-aPX">
                                                 <rect key="frame" x="8" y="8" width="359" height="641.5"/>
@@ -130,9 +130,18 @@
                             <constraint firstItem="Nof-Nc-YhY" firstAttribute="width" secondItem="3wW-0k-fk4" secondAttribute="width" id="rDa-fX-Qg5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Robot" id="lck-xe-cKd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qIt-1L-gwG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gmi-d0-aZX">
+                            <connections>
+                                <segue destination="ax9-dY-fmh" kind="unwind" unwindAction="unwindToRobotListWithSender:" id="ebU-ph-WA7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="saveButton" destination="gmi-d0-aZX" id="qdN-L2-XPI"/>
                         <outlet property="teamGameMode" destination="q6F-Qg-ua4" id="SK9-DS-GOK"/>
                         <outlet property="teamNameField" destination="Al4-a1-dFl" id="O0Y-ex-69R"/>
                         <outlet property="teamNameLabel" destination="7wr-BZ-4Vi" id="QUw-fg-zZi"/>
@@ -141,17 +150,115 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYo-mU-62t" sceneMemberID="firstResponder"/>
+                <exit id="ax9-dY-fmh" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="c43-Rh-N13">
                     <connections>
                         <action selector="chooseImage:" destination="5ui-Ny-jrA" id="5R1-8h-jyy"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1148" y="-48"/>
+            <point key="canvasLocation" x="4924" y="-4.497751124437781"/>
+        </scene>
+        <!--Robots-->
+        <scene sceneID="i6f-Wr-6wp">
+            <objects>
+                <tableViewController id="UGB-rx-0ow" customClass="RobotTableViewController" customModule="Robot_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="4pI-Rj-3Ln">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RobotTableViewCell" rowHeight="90" id="s1G-bE-kF9" customClass="RobotTableViewCell" customModule="Robot_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s1G-bE-kF9" id="Ly4-D1-mBB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="zId-fA-oXe">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Robot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBw-Wi-utK">
+                                            <rect key="frame" x="98" y="8" width="269" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Robot Description. Much Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RDz-Pq-tLO">
+                                            <rect key="frame" x="98" y="37" width="269" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="teamDesc" destination="RDz-Pq-tLO" id="iYR-4D-fT2"/>
+                                    <outlet property="teamName" destination="RBw-Wi-utK" id="i7I-7G-d7W"/>
+                                    <outlet property="teamPhoto" destination="zId-fA-oXe" id="VGj-SI-cGe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UGB-rx-0ow" id="24Z-tZ-UUZ"/>
+                            <outlet property="delegate" destination="UGB-rx-0ow" id="IPJ-uF-yLP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Robots" id="WEi-rw-1uR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T1h-LG-wOs">
+                            <connections>
+                                <segue destination="aFN-Vc-Gkz" kind="presentation" identifier="addRobot" id="HhK-K4-8GZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyJ-kj-W6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3120.8000000000002" y="-169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TjI-H7-9Wo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ajL-nT-Lkt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jTA-KR-IB2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UGB-rx-0ow" kind="relationship" relationship="rootViewController" id="hMq-NG-Awy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0H-Dv-EdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181.5999999999999" y="-169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jub-x4-zt1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aFN-Vc-Gkz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rpZ-IA-CVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5ui-Ny-jrA" kind="relationship" relationship="rootViewController" id="MNz-p1-i40"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6S-ME-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3984.8000000000002" y="-4.9475262368815596"/>
         </scene>
     </scenes>
     <resources>
         <image name="FRCSteamWorksLogo" width="1593" height="731"/>
+        <image name="defaultPhoto.png" width="1080" height="1080"/>
         <image name="defaultPic" width="540" height="540"/>
     </resources>
 </document>

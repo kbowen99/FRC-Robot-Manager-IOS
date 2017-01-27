@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50B7FA71E3AA51B0011B57B /* RobotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FA61E3AA51B0011B57B /* RobotTableViewCell.swift */; };
+		A50B7FA91E3AAA000011B57B /* RobotTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FA81E3AAA000011B57B /* RobotTableViewController.swift */; };
+		A50B7FAB1E3AAAAB0011B57B /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FAA1E3AAAAB0011B57B /* Robot.swift */; };
 		A5B3D72C1E1B1D37003E3721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */; };
-		A5B3D72E1E1B1D37003E3721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D72D1E1B1D37003E3721 /* ViewController.swift */; };
+		A5B3D72E1E1B1D37003E3721 /* RobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */; };
 		A5B3D7311E1B1D37003E3721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D72F1E1B1D37003E3721 /* Main.storyboard */; };
 		A5B3D7331E1B1D37003E3721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D7321E1B1D37003E3721 /* Assets.xcassets */; };
 		A5B3D7361E1B1D37003E3721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D7341E1B1D37003E3721 /* LaunchScreen.storyboard */; };
@@ -27,9 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50B7FA61E3AA51B0011B57B /* RobotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTableViewCell.swift; sourceTree = "<group>"; };
+		A50B7FA81E3AAA000011B57B /* RobotTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTableViewController.swift; sourceTree = "<group>"; };
+		A50B7FAA1E3AAAAB0011B57B /* Robot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		A5B3D7281E1B1D37003E3721 /* Robot Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5B3D72D1E1B1D37003E3721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotViewController.swift; sourceTree = "<group>"; };
 		A5B3D7301E1B1D37003E3721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5B3D7321E1B1D37003E3721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B3D7351E1B1D37003E3721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,8 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */,
-				A5B3D72D1E1B1D37003E3721 /* ViewController.swift */,
+				A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */,
 				A5B3D72F1E1B1D37003E3721 /* Main.storyboard */,
+				A50B7FA61E3AA51B0011B57B /* RobotTableViewCell.swift */,
+				A50B7FA81E3AAA000011B57B /* RobotTableViewController.swift */,
+				A50B7FAA1E3AAAAB0011B57B /* Robot.swift */,
 				A5B3D7321E1B1D37003E3721 /* Assets.xcassets */,
 				A5B3D7341E1B1D37003E3721 /* LaunchScreen.storyboard */,
 				A5B3D7371E1B1D37003E3721 /* Info.plist */,
@@ -205,7 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5B3D72E1E1B1D37003E3721 /* ViewController.swift in Sources */,
+				A50B7FAB1E3AAAAB0011B57B /* Robot.swift in Sources */,
+				A5B3D72E1E1B1D37003E3721 /* RobotViewController.swift in Sources */,
+				A50B7FA71E3AA51B0011B57B /* RobotTableViewCell.swift in Sources */,
+				A50B7FA91E3AAA000011B57B /* RobotTableViewController.swift in Sources */,
 				A5B3D72C1E1B1D37003E3721 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
