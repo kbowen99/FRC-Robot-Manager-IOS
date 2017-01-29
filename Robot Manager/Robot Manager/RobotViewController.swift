@@ -37,7 +37,11 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         let rating = (teamStrength.value * 100)
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        robo = Robot(name: name, photo: photo, rating: Int(rating))
+        robo = Robot(name: name, photo: photo, rating: rating)
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -45,6 +49,7 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         // Do any additional setup after loading the view, typically from a nib.
         // Handle the text field’s user input through delegate callbacks.
         teamNameField.delegate = self
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +79,8 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField){
-        teamNameLabel.text = teamNameField.text
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     @IBAction func chooseImage(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard. - did not know this was needed...
@@ -83,6 +89,17 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         imagePickerController.sourceType = .camera
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = teamNameField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
 

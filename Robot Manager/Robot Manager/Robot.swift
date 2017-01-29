@@ -11,12 +11,12 @@ import UIKit;
 class Robot {
     var name: String
     var photo: UIImage?
-    var rating: Int
+    var rating: Float
     var description: String
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Float) {
         self.name = name
         self.photo = photo
         self.rating = rating

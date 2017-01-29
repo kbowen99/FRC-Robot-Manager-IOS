@@ -131,7 +131,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Robot" id="lck-xe-cKd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qIt-1L-gwG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qIt-1L-gwG">
+                            <connections>
+                                <action selector="cancel:" destination="5ui-Ny-jrA" id="H9N-6X-hhL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gmi-d0-aZX">
                             <connections>
                                 <segue destination="ax9-dY-fmh" kind="unwind" unwindAction="unwindToRobotListWithSender:" id="ebU-ph-WA7"/>
