@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class RobotTableViewController: UITableViewController {
     //MARK: Properties
@@ -15,6 +16,7 @@ class RobotTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleRobots();
+        navigationItem.leftBarButtonItem = editButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,17 +66,18 @@ class RobotTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
+            Robots.remove(at: indexPath.row)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -83,23 +86,49 @@ class RobotTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddItem":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let roboDetailViewController = segue.destination as? RobotViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? RobotTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedRobot = Robots[indexPath.row]
+            roboDetailViewController.robo = selectedRobot
+            
+        default:
+            print("Unexpected Segue Identifier; \(segue.identifier)");
+        }
     }
-    */
+    
     
     //MARK: Private Methods
     
@@ -109,27 +138,35 @@ class RobotTableViewController: UITableViewController {
         let photo3 = UIImage(named: "defaultPic")
         
         guard let r1 = Robot(name: "Wildstang", photo: photo1, rating: 40) else {
-            fatalError("Unable to instantiate meal1")
+            fatalError("Unable to instantiate Robot")
         }
         
         guard let r2 = Robot(name: "Mars Wars", photo: photo2, rating: 50) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate Robot")
         }
         
         guard let r3 = Robot(name: "Foximus Prime", photo: photo3, rating: 10) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate Robot")
         }
         Robots += [r1, r2, r3]
     }
     
     @IBAction func unwindToRobotList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? RobotViewController, let meal = sourceViewController.robo {
+        if let sourceViewController = sender.source as? RobotViewController, let currRobot = sourceViewController.robo {
             
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: Robots.count, section: 0)
-            
-            Robots.append(meal)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            //-----------
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                Robots[selectedIndexPath.row] = currRobot
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: Robots.count, section: 0)
+                
+                Robots.append(currRobot)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 

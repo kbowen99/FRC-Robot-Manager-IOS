@@ -41,7 +41,19 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        let isPresentingInAddRobotMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddRobotMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The RobotViewController is not inside a navigation controller.")
+        }
+
     }
     
     override func viewDidLoad() {
@@ -50,6 +62,14 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         // Handle the text field’s user input through delegate callbacks.
         teamNameField.delegate = self
         updateSaveButtonState()
+        
+        //Load Robot
+        if let robo = robo {
+            navigationItem.title = robo.name
+            teamNameField.text   = robo.name
+            teamPhoto.image = robo.photo
+            teamStrength.value = robo.rating
+        }
     }
 
     override func didReceiveMemoryWarning() {

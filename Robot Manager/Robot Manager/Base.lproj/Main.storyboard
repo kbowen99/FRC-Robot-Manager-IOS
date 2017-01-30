@@ -203,6 +203,7 @@
                                     <outlet property="teamDesc" destination="RDz-Pq-tLO" id="iYR-4D-fT2"/>
                                     <outlet property="teamName" destination="RBw-Wi-utK" id="i7I-7G-d7W"/>
                                     <outlet property="teamPhoto" destination="zId-fA-oXe" id="VGj-SI-cGe"/>
+                                    <segue destination="5ui-Ny-jrA" kind="show" identifier="ShowDetail" id="oZW-DD-Wdc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -257,7 +258,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6S-ME-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3984.8000000000002" y="-4.9475262368815596"/>
+            <point key="canvasLocation" x="3966" y="462"/>
         </scene>
     </scenes>
     <resources>
@@ -265,4 +266,7 @@
         <image name="defaultPhoto.png" width="1080" height="1080"/>
         <image name="defaultPic" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oZW-DD-Wdc"/>
+    </inferredMetricsTieBreakers>
 </document>
