@@ -6,17 +6,145 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Robot Manager/Robot.swift"
-            timestampString = "507162873.611435"
+            timestampString = "507759815.033088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "Robot"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Robot Manager/Robot.swift"
+            timestampString = "507759815.033088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Robot Manager/Robot.swift"
+            timestampString = "507759384.574776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Robot Manager/Robot.swift"
+            timestampString = "507759832.093343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Robot"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Robot_Manager.Robot.init (name : Swift.String, photo : Swift.Optional&lt;__ObjC.UIImage&gt;, rating : Swift.Float) -&gt; Swift.Optional&lt;Robot_Manager.Robot&gt;"
+                  moduleName = "Robot Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kurtisbowen992/Documents/FRC-Robot-Manager-IOS/Robot%20Manager/Robot%20Manager/Robot.swift"
+                  timestampString = "507759832.103879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Robot_Manager.Robot.__allocating_init (name : Swift.String, photo : Swift.Optional&lt;__ObjC.UIImage&gt;, rating : Swift.Float) -&gt; Swift.Optional&lt;Robot_Manager.Robot&gt;"
+                  moduleName = "Robot Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kurtisbowen992/Documents/FRC-Robot-Manager-IOS/Robot%20Manager/Robot%20Manager/Robot.swift"
+                  timestampString = "507759832.111507"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Robot Manager/Robot.swift"
+            timestampString = "507759834.138676"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(name:photo:rating:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Robot_Manager.Robot.init (name : Swift.String, photo : Swift.Optional&lt;__ObjC.UIImage&gt;, rating : Swift.Float) -&gt; Swift.Optional&lt;Robot_Manager.Robot&gt;"
+                  moduleName = "Robot Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kurtisbowen992/Documents/FRC-Robot-Manager-IOS/Robot%20Manager/Robot%20Manager/Robot.swift"
+                  timestampString = "507759834.148585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Robot_Manager.Robot.__allocating_init (name : Swift.String, photo : Swift.Optional&lt;__ObjC.UIImage&gt;, rating : Swift.Float) -&gt; Swift.Optional&lt;Robot_Manager.Robot&gt;"
+                  moduleName = "Robot Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kurtisbowen992/Documents/FRC-Robot-Manager-IOS/Robot%20Manager/Robot%20Manager/Robot.swift"
+                  timestampString = "507759834.153646"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

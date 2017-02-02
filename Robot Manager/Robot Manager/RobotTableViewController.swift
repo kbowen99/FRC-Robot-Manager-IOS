@@ -15,13 +15,19 @@ class RobotTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleRobots();
         navigationItem.leftBarButtonItem = editButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if let savedBots = loadBots() {
+            Robots += savedBots
+        }
+        else {
+            // Load the sample data.
+            loadSampleRobots()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,8 +77,9 @@ class RobotTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
             Robots.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveBots()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -167,7 +174,19 @@ class RobotTableViewController: UITableViewController {
                 Robots.append(currRobot)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveBots();
         }
     }
-
-}
+    
+    private func saveBots() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(Robots, toFile: Robot.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Bots successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bots...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadBots() -> [Robot]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Robot.ArchiveURL.path) as? [Robot]
+    }}
