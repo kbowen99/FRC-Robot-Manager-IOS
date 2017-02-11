@@ -56,9 +56,9 @@ class RobotTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let robo = Robots[indexPath.row]
         
-        cell.teamName.text = robo.name
+        cell.teamName.text = robo.teamNum
         cell.teamPhoto.image = robo.photo
-        cell.teamDesc.text = String(format:"%.2f", robo.rating)
+        cell.teamDesc.text = robo.desc
         
         return cell
     }
@@ -141,21 +141,21 @@ class RobotTableViewController: UITableViewController {
     
     private func loadSampleRobots() {
         let photo1 = UIImage(named: "defaultPic")
-        let photo2 = UIImage(named: "defaultPic")
-        let photo3 = UIImage(named: "defaultPic")
-        
-        guard let r1 = Robot(name: "Wildstang", photo: photo1, rating: 40) else {
+        //let photo2 = UIImage(named: "defaultPic")
+        //let photo3 = UIImage(named: "defaultPic")
+        //self.init(teamNum:teamNum, photo:photo, gameMode:gameMode, shooter:canShoot, gears:canGear, drive:driveTrain, autoLvl:autoLvl, autoESR:autoESR, misc:other);
+        guard let r1 = Robot(teamNum:"3695", photo:photo1, gameMode:2, shooter:1, gears:1, drive:1, autoLvl:1, autoESR:12, misc:"Hi") else {
             fatalError("Unable to instantiate Robot")
         }
-        
-        guard let r2 = Robot(name: "Mars Wars", photo: photo2, rating: 50) else {
-            fatalError("Unable to instantiate Robot")
-        }
-        
-        guard let r3 = Robot(name: "Foximus Prime", photo: photo3, rating: 10) else {
-            fatalError("Unable to instantiate Robot")
-        }
-        Robots += [r1, r2, r3]
+//        
+//        guard let r2 = Robot(name: "Mars Wars", photo: photo2, rating: 50) else {
+//            fatalError("Unable to instantiate Robot")
+//        }
+//        
+//        guard let r3 = Robot(name: "Foximus Prime", photo: photo3, rating: 10) else {
+//            fatalError("Unable to instantiate Robot")
+//        }
+        Robots += [r1]
     }
     
     @IBAction func unwindToRobotList(sender: UIStoryboardSegue) {

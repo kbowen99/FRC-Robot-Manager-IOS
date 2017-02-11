@@ -48,7 +48,7 @@
                                                         <rect key="frame" x="0.0" y="112.5" width="359" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPic" translatesAutoresizingMaskIntoConstraints="NO" id="SZu-AX-DEx">
                                                         <rect key="frame" x="0.0" y="150.5" width="320" height="320"/>
@@ -172,7 +172,7 @@
                                                         <rect key="frame" x="0.0" y="1004.5" width="359" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -229,7 +229,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="AutoSelector" destination="EGk-iu-mYR" id="UtB-77-sBb"/>
+                        <outlet property="AutoSlider" destination="cVL-mH-XQg" id="Tg1-D9-LiH"/>
+                        <outlet property="driveSelector" destination="I4O-yc-1y2" id="vX5-a1-iXo"/>
+                        <outlet property="gameSelector" destination="rwe-OZ-hav" id="iAQ-xb-fuk"/>
+                        <outlet property="gearSelector" destination="ZoV-eS-1XX" id="8ca-rR-ZtJ"/>
+                        <outlet property="notesField" destination="6dd-hk-X6D" id="xUr-cH-o6Y"/>
                         <outlet property="saveButton" destination="gmi-d0-aZX" id="qdN-L2-XPI"/>
+                        <outlet property="shooterSelector" destination="Bx7-Vu-yds" id="y66-SC-eEh"/>
                         <outlet property="teamNameField" destination="Al4-a1-dFl" id="O0Y-ex-69R"/>
                         <outlet property="teamNameLabel" destination="7wr-BZ-4Vi" id="QUw-fg-zZi"/>
                         <outlet property="teamPhoto" destination="SZu-AX-DEx" id="oBO-5A-u4h"/>
@@ -272,7 +279,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Robot Description. Much Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RDz-Pq-tLO">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Robot Description. Much Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDz-Pq-tLO">
                                             <rect key="frame" x="98" y="37" width="269" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
