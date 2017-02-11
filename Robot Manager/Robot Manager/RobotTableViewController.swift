@@ -112,8 +112,8 @@ class RobotTableViewController: UITableViewController {
         
         switch(segue.identifier ?? "") {
             
-        case "AddItem":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+        case "addRobot":
+            os_log("Adding", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
             guard let roboDetailViewController = segue.destination as? RobotViewController else {

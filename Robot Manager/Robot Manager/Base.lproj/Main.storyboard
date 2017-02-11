@@ -20,17 +20,17 @@
                         <viewControllerLayoutGuide type="bottom" id="DQ1-c1-g5r"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3wW-0k-fk4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-kP-huU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-Nc-YhY">
                                         <rect key="frame" x="0.0" y="-64" width="375" height="1064"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-jG-aPX">
-                                                <rect key="frame" x="8" y="8" width="359" height="641.5"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="1034.5"/>
                                                 <subviews>
                                                     <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FRCSteamWorksLogo" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSC-uh-Ko8">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="75"/>
@@ -60,47 +60,131 @@
                                                             <outletCollection property="gestureRecognizers" destination="c43-Rh-N13" appends="YES" id="F6e-jL-hO9"/>
                                                         </connections>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expected Success Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y3-t7-VTs">
-                                                        <rect key="frame" x="0.0" y="478.5" width="190.5" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teleop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0P-d5-sUd">
+                                                        <rect key="frame" x="0.0" y="478.5" width="65.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D4B-cm-82g">
-                                                        <rect key="frame" x="-2" y="508" width="363" height="31"/>
-                                                    </slider>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Play Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0P-d5-sUd">
-                                                        <rect key="frame" x="0.0" y="546" width="128" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuP-Rd-xew">
+                                                        <rect key="frame" x="0.0" y="513" width="69" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="q6F-Qg-ua4">
-                                                        <rect key="frame" x="0.0" y="575.5" width="359" height="29"/>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bx7-Vu-yds">
+                                                        <rect key="frame" x="0.0" y="541.5" width="359" height="29"/>
                                                         <segments>
-                                                            <segment title="Offensive"/>
-                                                            <segment title="Defensive"/>
+                                                            <segment title="No"/>
+                                                            <segment title="Low"/>
+                                                            <segment title="High"/>
+                                                            <segment title="Yes"/>
                                                         </segments>
                                                     </segmentedControl>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RWt-hx-95Z">
-                                                        <rect key="frame" x="0.0" y="611.5" width="359" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2W-2A-BdE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
-                                                                <state key="normal" title="Submit"/>
-                                                                <connections>
-                                                                    <action selector="teamSubmit:" destination="5ui-Ny-jrA" eventType="touchUpInside" id="TpE-Al-1X8"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gears" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGF-xI-Z5a">
+                                                        <rect key="frame" x="0.0" y="577.5" width="48" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-eS-1XX">
+                                                        <rect key="frame" x="0.0" y="607" width="359" height="29"/>
+                                                        <segments>
+                                                            <segment title="No"/>
+                                                            <segment title="Really Slow"/>
+                                                            <segment title="Yes"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Game Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMu-pp-Hhh">
+                                                        <rect key="frame" x="0.0" y="643" width="142" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rwe-OZ-hav">
+                                                        <rect key="frame" x="0.0" y="672.5" width="359" height="29"/>
+                                                        <segments>
+                                                            <segment title="Defense"/>
+                                                            <segment title="Gears"/>
+                                                            <segment title="Low Goal"/>
+                                                            <segment title="High Goal"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Train" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1D-0M-xxy">
+                                                        <rect key="frame" x="0.0" y="708.5" width="82.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-yc-1y2">
+                                                        <rect key="frame" x="0.0" y="737" width="359" height="29"/>
+                                                        <segments>
+                                                            <segment title="Sketchy"/>
+                                                            <segment title="Precise"/>
+                                                            <segment title="Fast"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autonomous" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67b-pY-gmJ">
+                                                        <rect key="frame" x="0.0" y="773" width="124.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autonomous Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J3-vS-Ez4">
+                                                        <rect key="frame" x="0.0" y="807.5" width="149" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EGk-iu-mYR">
+                                                        <rect key="frame" x="0.0" y="837" width="359" height="29"/>
+                                                        <segments>
+                                                            <segment title="None"/>
+                                                            <segment title="Line"/>
+                                                            <segment title="Low Goal"/>
+                                                            <segment title="High Goal"/>
+                                                            <segment title="Gears"/>
+                                                            <segment title="Yes"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autonomous Expected Success Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsN-x6-c5y">
+                                                        <rect key="frame" x="0.0" y="873" width="297" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-mH-XQg">
+                                                        <rect key="frame" x="-2" y="902.5" width="363" height="31"/>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-w5-yGA">
+                                                        <rect key="frame" x="0.0" y="940.5" width="52.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q37-hy-6nQ">
+                                                        <rect key="frame" x="0.0" y="975" width="133.5" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dd-hk-X6D">
+                                                        <rect key="frame" x="0.0" y="1004.5" width="359" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Al4-a1-dFl" secondAttribute="trailing" id="5Tx-Be-Eon"/>
-                                                    <constraint firstAttribute="trailing" secondItem="q6F-Qg-ua4" secondAttribute="trailing" id="az6-KF-mEr"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="RWt-hx-95Z" secondAttribute="trailing" id="gXd-rJ-ukq"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="cVL-mH-XQg" secondAttribute="trailing" id="CEn-Ce-PgC"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="ZoV-eS-1XX" secondAttribute="trailing" id="JGq-Z9-0pe"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="Bx7-Vu-yds" secondAttribute="trailing" id="OpQ-Cg-Wf1"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="rwe-OZ-hav" secondAttribute="trailing" id="ZNB-SK-hpB"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="EGk-iu-mYR" secondAttribute="trailing" id="cmc-nl-j5E"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="I4O-yc-1y2" secondAttribute="trailing" id="eaZ-cd-0yH"/>
                                                     <constraint firstAttribute="trailing" secondItem="OSC-uh-Ko8" secondAttribute="trailing" id="nxo-Xf-eZo"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="D4B-cm-82g" secondAttribute="trailing" id="xfE-Ov-cI4"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="6dd-hk-X6D" secondAttribute="trailing" id="qCg-Wz-MAR"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -109,7 +193,7 @@
                                             <constraint firstItem="ps9-jG-aPX" firstAttribute="leading" secondItem="Nof-Nc-YhY" secondAttribute="leadingMargin" id="Gwi-lt-kYt"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ps9-jG-aPX" secondAttribute="trailing" id="IQ6-93-QYq"/>
                                             <constraint firstItem="ps9-jG-aPX" firstAttribute="top" secondItem="Nof-Nc-YhY" secondAttribute="topMargin" id="OG1-P3-uQI"/>
-                                            <constraint firstAttribute="height" constant="1000" id="awg-Rc-ZOa"/>
+                                            <constraint firstAttribute="height" constant="1200" id="awg-Rc-ZOa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -143,14 +227,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="saveButton" destination="gmi-d0-aZX" id="qdN-L2-XPI"/>
-                        <outlet property="teamGameMode" destination="q6F-Qg-ua4" id="SK9-DS-GOK"/>
                         <outlet property="teamNameField" destination="Al4-a1-dFl" id="O0Y-ex-69R"/>
                         <outlet property="teamNameLabel" destination="7wr-BZ-4Vi" id="QUw-fg-zZi"/>
                         <outlet property="teamPhoto" destination="SZu-AX-DEx" id="oBO-5A-u4h"/>
-                        <outlet property="teamStrength" destination="D4B-cm-82g" id="KBQ-Fq-sGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYo-mU-62t" sceneMemberID="firstResponder"/>
@@ -161,7 +243,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4924" y="-4.497751124437781"/>
+            <point key="canvasLocation" x="4937" y="-461"/>
         </scene>
         <!--Robots-->
         <scene sceneID="i6f-Wr-6wp">
