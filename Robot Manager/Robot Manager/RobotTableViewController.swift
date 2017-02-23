@@ -26,7 +26,7 @@ class RobotTableViewController: UITableViewController {
         }
         else {
             // Load the sample data.
-            loadSampleRobots()
+            //loadSampleRobots()
         }
     }
 

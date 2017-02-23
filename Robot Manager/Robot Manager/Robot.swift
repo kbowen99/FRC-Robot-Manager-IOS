@@ -10,17 +10,17 @@ import UIKit;
 import os.log;
 
 class Robot: NSObject, NSCoding  {
-    var teamNum: String
+    var teamNum: String = ""
     var photo: UIImage?
-    var desc: String
+    var desc: String = ""
     //Tele Variables
-    var gameMode: Int
-    var canShoot: Int
-    var canGear: Int
-    var driveTrain: Int
+    var gameMode: Int = 0
+    var canShoot: Int = 0
+    var canGear: Int = 0
+    var driveTrain: Int = 0
     //Auto Vars
-    var autoLvl: Int
-    var autoESR: Int
+    var autoLvl: Int = 0
+    var autoESR: Int = 0
     //Misc
     var other: String
     
@@ -50,18 +50,43 @@ class Robot: NSObject, NSCoding  {
     //Data Structure Decoding
     required convenience init?(coder aDecoder: NSCoder) {
         guard let teamNum = aDecoder.decodeObject(forKey: PropertyKey.teamNum) as? String else {
-            os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
+            os_log("Unable to decode the name for a Robot object.", log: OSLog.default, type: .debug)
             return nil
         }
-        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
-        let gameMode = aDecoder.decodeObject(forKey: PropertyKey.gameMode) as! Int
-        let canShoot = aDecoder.decodeObject(forKey: PropertyKey.canShoot) as! Int
-        let canGear = aDecoder.decodeObject(forKey: PropertyKey.canGear) as! Int
-        let driveTrain = aDecoder.decodeObject(forKey: PropertyKey.driveTrain) as! Int
-        let autoLvl = aDecoder.decodeObject(forKey: PropertyKey.autoLvl) as! Int
-        let autoESR = aDecoder.decodeObject(forKey: PropertyKey.autoESR) as! Int
-        let other = aDecoder.decodeObject(forKey: PropertyKey.other) as! String
-        self.init(teamNum:teamNum, photo:photo, gameMode:gameMode, shooter:canShoot, gears:canGear, drive:driveTrain, autoLvl:autoLvl, autoESR:autoESR, misc:other);
+        guard let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage else {
+            os_log("Unable to decode the Photo for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let gameMode = aDecoder.decodeObject(forKey: PropertyKey.gameMode) as? String else {
+            os_log("Unable to decode the GameMode for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let canShoot = aDecoder.decodeObject(forKey: PropertyKey.canShoot) as? String else {
+            os_log("Unable to decode the Shooter for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let canGear = aDecoder.decodeObject(forKey: PropertyKey.canGear) as? String else {
+            os_log("Unable to decode the Gear for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let driveTrain = aDecoder.decodeObject(forKey: PropertyKey.driveTrain) as? String else {
+            os_log("Unable to decode the DriveTrain for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let autoLvl = aDecoder.decodeObject(forKey: PropertyKey.autoLvl) as? String else {
+            os_log("Unable to decode the AutoLvl for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let autoESR = aDecoder.decodeObject(forKey: PropertyKey.autoESR) as? String else {
+            os_log("Unable to decode the AutoESR for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let other = aDecoder.decodeObject(forKey: PropertyKey.other) as? String else {
+            os_log("Unable to decode the OTHER for a Robot object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        self.init(teamNum:teamNum, photo:photo, gameMode:Int(gameMode)!, shooter:Int(canShoot)!, gears:Int(canGear)!, drive:Int(driveTrain)!, autoLvl:Int(autoLvl)!, autoESR:Int(autoESR)!, misc:other);
         
     }
     
@@ -69,7 +94,7 @@ class Robot: NSObject, NSCoding  {
     struct PropertyKey {
         static let teamNum = "name"
         static let photo = "photo"
-        static let gameMode = "gm"
+        static let gameMode = "gameMode"
         static let canShoot = "canShoot"
         static let canGear = "canGear"
         static let driveTrain = "driveTrain"
@@ -79,14 +104,18 @@ class Robot: NSObject, NSCoding  {
     }
     
     func encode(with aCoder: NSCoder) {
+        let magic:String = "TRYING TO ENCODE: " + String(teamNum) + "|" + String(gameMode) + "|" + String(canShoot) + "|" + String(canGear) + "|" + String(driveTrain) + "|" + String(autoLvl) + "|" + String(autoESR) + "|" + String(other);
+        print(magic);
+        //os_log(magic, log: OSLog.default, type: .debug)
+        //aCoder.encodeCInt(Int32(gameMode), forKey: PropertyKey.gameMode)
         aCoder.encode(teamNum, forKey: PropertyKey.teamNum)
         aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(gameMode, forKey: PropertyKey.gameMode)
-        aCoder.encode(canShoot, forKey: PropertyKey.canShoot)
-        aCoder.encode(canGear, forKey: PropertyKey.canGear)
-        aCoder.encode(driveTrain, forKey: PropertyKey.driveTrain)
-        aCoder.encode(autoLvl, forKey: PropertyKey.autoLvl)
-        aCoder.encode(autoESR, forKey: PropertyKey.autoESR)
+        aCoder.encode(String(gameMode), forKey: PropertyKey.gameMode)
+        aCoder.encode(String(canShoot), forKey: PropertyKey.canShoot)
+        aCoder.encode(String(canGear), forKey: PropertyKey.canGear)
+        aCoder.encode(String(driveTrain), forKey: PropertyKey.driveTrain)
+        aCoder.encode(String(autoLvl), forKey: PropertyKey.autoLvl)
+        aCoder.encode(String(autoESR), forKey: PropertyKey.autoESR)
         aCoder.encode(other, forKey: PropertyKey.other)
     }
 }
