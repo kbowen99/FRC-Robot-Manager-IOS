@@ -32,7 +32,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-jG-aPX">
                                                 <rect key="frame" x="8" y="8" width="359" height="1035"/>
                                                 <subviews>
-                                                    <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FRCSteamWorksLogo" highlighted="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSC-uh-Ko8">
+                                                    <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FRCSteamWorksLogo" translatesAutoresizingMaskIntoConstraints="NO" id="OSC-uh-Ko8">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="75" id="YDV-b4-Ey2"/>
@@ -307,7 +307,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4937" y="-461"/>
+            <point key="canvasLocation" x="4105" y="70"/>
         </scene>
         <!--Robots-->
         <scene sceneID="i6f-Wr-6wp">
@@ -322,7 +322,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s1G-bE-kF9" id="Ly4-D1-mBB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="zId-fA-oXe">
@@ -404,7 +404,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6S-ME-vp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3966" y="462"/>
+            <point key="canvasLocation" x="3121" y="641"/>
         </scene>
     </scenes>
     <resources>
