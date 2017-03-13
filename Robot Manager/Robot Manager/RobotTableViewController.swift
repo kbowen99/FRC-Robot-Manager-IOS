@@ -32,7 +32,7 @@ class RobotTableViewController: UITableViewController {
         }
         else {
             // Load the sample data.
-            //loadSampleRobots()
+            loadSampleRobots()
         }
     }
 
@@ -146,11 +146,11 @@ class RobotTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleRobots() {
-        let photo1 = UIImage(named: "defaultPic")
+        let photo1 = UIImage(named: "FRCSteamWorksLogo")
         //let photo2 = UIImage(named: "defaultPic")
         //let photo3 = UIImage(named: "defaultPic")
         //self.init(teamNum:teamNum, photo:photo, gameMode:gameMode, shooter:canShoot, gears:canGear, drive:driveTrain, autoLvl:autoLvl, autoESR:autoESR, misc:other);
-        guard let r1 = Robot(teamNum:"3695", photo:photo1, gameMode:2, shooter:1, gears:1, drive:1, autoLvl:1, autoESR:12, misc:"Hi") else {
+        guard let r1 = Robot(teamNum:"3695", photo:photo1, gameMode:1, shooter:2, gears:2, drive:2, autoLvl:4, autoESR:85, misc:"Thanks for Downloading the App! -Team 3695") else {
             fatalError("Unable to instantiate Robot")
         }
 //        
