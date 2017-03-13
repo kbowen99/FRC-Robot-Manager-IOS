@@ -13,8 +13,14 @@ class RobotTableViewController: UITableViewController {
     //MARK: Properties
     var Robots = [Robot]();
     
+    //MPC
+    let roboService = RobotServiceManager()
+    
+    @IBOutlet weak var NavMenu: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        roboService.delegate = self
         navigationItem.leftBarButtonItem = editButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -174,6 +180,9 @@ class RobotTableViewController: UITableViewController {
                 Robots.append(currRobot)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            
+            roboService.send(robot: currRobot)
+            
             saveBots();
         }
     }
@@ -189,4 +198,32 @@ class RobotTableViewController: UITableViewController {
     
     private func loadBots() -> [Robot]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Robot.ArchiveURL.path) as? [Robot]
-    }}
+    }
+
+    public func addBot(robot:Robot){
+        let newIndexPath = IndexPath(row: Robots.count, section: 0)
+        
+        Robots.append(robot)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        
+        print("APPENDED ROBOT");
+    }
+}
+
+//MAGICAL WIFIS
+
+extension RobotTableViewController : RobotServiceManagerDelegate {
+    
+    func connectedDevicesChanged(manager: RobotServiceManager, connectedDevices: [String]) {
+        OperationQueue.main.addOperation {
+            self.NavMenu.title = "\(connectedDevices.count) Peers"
+        }
+    }
+    public func magicBot(robo: Robot){
+        OperationQueue.main.addOperation {
+            print("QUEING ROBOT");
+            self.addBot(robot: robo)
+        }
+    }
+    
+}

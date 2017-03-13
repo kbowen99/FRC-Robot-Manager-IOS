@@ -10,6 +10,7 @@
 		A50B7FA71E3AA51B0011B57B /* RobotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FA61E3AA51B0011B57B /* RobotTableViewCell.swift */; };
 		A50B7FA91E3AAA000011B57B /* RobotTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FA81E3AAA000011B57B /* RobotTableViewController.swift */; };
 		A50B7FAB1E3AAAAB0011B57B /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B7FAA1E3AAAAB0011B57B /* Robot.swift */; };
+		A51642051E761F190039C1F2 /* RobotServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51642041E761F190039C1F2 /* RobotServiceManager.swift */; };
 		A5B3D72C1E1B1D37003E3721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */; };
 		A5B3D72E1E1B1D37003E3721 /* RobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */; };
 		A5B3D7311E1B1D37003E3721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B3D72F1E1B1D37003E3721 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		A50B7FA61E3AA51B0011B57B /* RobotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTableViewCell.swift; sourceTree = "<group>"; };
 		A50B7FA81E3AAA000011B57B /* RobotTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotTableViewController.swift; sourceTree = "<group>"; };
 		A50B7FAA1E3AAAAB0011B57B /* Robot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		A51642041E761F190039C1F2 /* RobotServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RobotServiceManager.swift; path = ../RobotServiceManager.swift; sourceTree = "<group>"; };
 		A5B3D7281E1B1D37003E3721 /* Robot Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Robot Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		A5B3D72A1E1B1D37003E3721 /* Robot Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A51642041E761F190039C1F2 /* RobotServiceManager.swift */,
 				A5B3D72B1E1B1D37003E3721 /* AppDelegate.swift */,
 				A5B3D72D1E1B1D37003E3721 /* RobotViewController.swift */,
 				A5B3D72F1E1B1D37003E3721 /* Main.storyboard */,
@@ -158,7 +161,7 @@
 				TargetAttributes = {
 					A5B3D7271E1B1D37003E3721 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M998EQJDH4;
+						DevelopmentTeam = 5A8KKY65G5;
 						ProvisioningStyle = Automatic;
 					};
 					A5B3D73B1E1B1D37003E3721 = {
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51642051E761F190039C1F2 /* RobotServiceManager.swift in Sources */,
 				A50B7FAB1E3AAAAB0011B57B /* Robot.swift in Sources */,
 				A5B3D72E1E1B1D37003E3721 /* RobotViewController.swift in Sources */,
 				A50B7FA71E3AA51B0011B57B /* RobotTableViewCell.swift in Sources */,
@@ -358,11 +362,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M998EQJDH4;
+				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kurt.RobotManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kurt.RobotManagerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -376,11 +380,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M998EQJDH4;
+				DEVELOPMENT_TEAM = 5A8KKY65G5;
 				INFOPLIST_FILE = "Robot Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kurt.RobotManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kurt.RobotManagerTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

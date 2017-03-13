@@ -365,6 +365,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="NavMenu" destination="WEi-rw-1uR" id="f4F-ga-0TW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyJ-kj-W6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,6 +416,6 @@
         <image name="defaultPic" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MNz-p1-i40"/>
+        <segue reference="oZW-DD-Wdc"/>
     </inferredMetricsTieBreakers>
 </document>

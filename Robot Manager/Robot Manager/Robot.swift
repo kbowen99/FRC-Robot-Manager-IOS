@@ -118,4 +118,5 @@ class Robot: NSObject, NSCoding  {
         aCoder.encode(String(autoESR), forKey: PropertyKey.autoESR)
         aCoder.encode(other, forKey: PropertyKey.other)
     }
+    
 }
