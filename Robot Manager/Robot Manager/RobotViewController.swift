@@ -25,7 +25,7 @@ class RobotViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet weak var notesField: UITextField!
     
     //Current Robot
-    var robo:Robot?
+    @objc var robo:Robot?
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

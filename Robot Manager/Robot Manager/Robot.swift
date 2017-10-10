@@ -10,25 +10,25 @@ import UIKit;
 import os.log;
 
 class Robot: NSObject, NSCoding  {
-    var teamNum: String = ""
-    var photo: UIImage?
-    var desc: String = ""
+    @objc var teamNum: String = ""
+    @objc var photo: UIImage?
+    @objc var desc: String = ""
     //Tele Variables
-    var gameMode: Int = 0
-    var canShoot: Int = 0
-    var canGear: Int = 0
-    var driveTrain: Int = 0
+    @objc var gameMode: Int = 0
+    @objc var canShoot: Int = 0
+    @objc var canGear: Int = 0
+    @objc var driveTrain: Int = 0
     //Auto Vars
-    var autoLvl: Int = 0
-    var autoESR: Int = 0
+    @objc var autoLvl: Int = 0
+    @objc var autoESR: Int = 0
     //Misc
-    var other: String
+    @objc var other: String
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bots")
+    @objc static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    @objc static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bots")
     
     //MARK: Initialization
-    init?(teamNum: String, photo: UIImage?, gameMode: Int, shooter: Int, gears: Int, drive: Int, autoLvl: Int, autoESR: Int, misc: String) {
+    @objc init?(teamNum: String, photo: UIImage?, gameMode: Int, shooter: Int, gears: Int, drive: Int, autoLvl: Int, autoESR: Int, misc: String) {
         self.teamNum = teamNum
         self.photo = photo
         self.gameMode = gameMode

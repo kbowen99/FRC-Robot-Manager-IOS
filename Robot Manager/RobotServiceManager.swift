@@ -30,7 +30,7 @@ class RobotServiceManager : NSObject {
     
     var delegate : RobotServiceManagerDelegate?
     
-    lazy var session : MCSession = {
+    @objc lazy var session : MCSession = {
         let session = MCSession(peer: self.myPeerId, securityIdentity: nil, encryptionPreference: .none)
         session.delegate = self
         return session
@@ -49,7 +49,7 @@ class RobotServiceManager : NSObject {
         self.serviceBrowser.startBrowsingForPeers()
     }
     
-    func send(robot : Robot) {
+    @objc func send(robot : Robot) {
         NSLog("%@", "sendingBot to \(session.connectedPeers.count) peers")
         
         if session.connectedPeers.count > 0 {

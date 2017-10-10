@@ -11,10 +11,10 @@ import os.log
 
 class RobotTableViewController: UITableViewController {
     //MARK: Properties
-    var Robots = [Robot]();
+    @objc var Robots = [Robot]();
     
     //MPC
-    let roboService = RobotServiceManager()
+    @objc let roboService = RobotServiceManager()
     
     @IBOutlet weak var NavMenu: UINavigationItem!
     
@@ -200,7 +200,7 @@ class RobotTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Robot.ArchiveURL.path) as? [Robot]
     }
 
-    public func addBot(robot:Robot){
+    @objc public func addBot(robot:Robot){
         let newIndexPath = IndexPath(row: Robots.count, section: 0)
         
         Robots.append(robot)
@@ -214,12 +214,12 @@ class RobotTableViewController: UITableViewController {
 
 extension RobotTableViewController : RobotServiceManagerDelegate {
     
-    func connectedDevicesChanged(manager: RobotServiceManager, connectedDevices: [String]) {
+    @objc func connectedDevicesChanged(manager: RobotServiceManager, connectedDevices: [String]) {
         OperationQueue.main.addOperation {
             self.NavMenu.title = "\(connectedDevices.count) Peers"
         }
     }
-    public func magicBot(robo: Robot){
+    @objc public func magicBot(robo: Robot){
         OperationQueue.main.addOperation {
             print("QUEING ROBOT");
             self.addBot(robot: robo)
