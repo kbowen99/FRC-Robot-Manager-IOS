@@ -104,8 +104,8 @@ class Robot: NSObject, NSCoding  {
     }
     
     func encode(with aCoder: NSCoder) {
-        let magic:String = "TRYING TO ENCODE: " + String(teamNum) + "|" + String(gameMode) + "|" + String(canShoot) + "|" + String(canGear) + "|" + String(driveTrain) + "|" + String(autoLvl) + "|" + String(autoESR) + "|" + String(other);
-        print(magic);
+        //let magic:String = "TRYING TO ENCODE: " + String(teamNum) + "|" + String(gameMode) + "|" + String(canShoot) + "|" + String(canGear) + "|" + String(driveTrain) + "|" + String(autoLvl) + "|" + String(autoESR) + "|" + String(other);
+        //print(magic);
         //os_log(magic, log: OSLog.default, type: .debug)
         //aCoder.encodeCInt(Int32(gameMode), forKey: PropertyKey.gameMode)
         aCoder.encode(teamNum, forKey: PropertyKey.teamNum)
