@@ -127,7 +127,7 @@ class RobotTableViewController: UITableViewController {
             }
             
             guard let selectedMealCell = sender as? RobotTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(sender ?? "unknown")")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
@@ -138,7 +138,7 @@ class RobotTableViewController: UITableViewController {
             roboDetailViewController.robo = selectedRobot
             
         default:
-            print("Unexpected Segue Identifier; \(segue.identifier)");
+            print("Unexpected Segue Identifier; \(segue.identifier ?? "unknown")");
         }
     }
     
